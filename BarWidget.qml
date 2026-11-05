@@ -60,6 +60,7 @@ BarWidget {
     id: button
     anchors.fill: parent
     bar: root.bar
+    foreground: root.bar && root.bar.visualTokens && root.bar.visualTokens.seal !== undefined ? root.bar.visualTokens.seal : (root.bar ? root.bar.urgent : Color.urgent)
     text: root.monitorCount > 1 ? "󰍺" : "󰍹"
     dimmed: root.barIconDimmed
     tooltipText: root.activeProfile !== "" ? "Display · " + root.activeProfile : "Display · hyprmoncfg"
